@@ -1,5 +1,15 @@
-<div *ngFor="let user of usersList">
-  <div *ngIf="showUser(user.userId)" (click)="goToChatPage(user)">
-    {{ user.name }}
+<div class="container">
+  <h3>Users List</h3>
+  <div class="listContainer">
+    <div *ngFor="let user of usersList">
+      <div
+        *ngIf="showUser(user.userId)"
+        class="user-container"
+        (click)="goToChatPage(user)"
+      >
+        <ngx-avatar name="{{ user.name }}"></ngx-avatar>
+        <p class="userName">{{ user.name }}</p>
+      </div>
+    </div>
   </div>
 </div>

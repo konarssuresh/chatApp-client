@@ -9,6 +9,13 @@
           class="form-control"
           placeholder="Enter user id"
         />
+        <div
+          *ngIf="getControl.firstName.touched && getControl.firstName.invalid"
+        >
+          <p *ngIf="getControl.firstName.errors?.required" class="text-danger">
+            this field is required
+          </p>
+        </div>
       </div>
 
       <div class="form-group">
@@ -20,6 +27,11 @@
           class="form-control"
           placeholder="Enter user id"
         />
+        <div *ngIf="getControl.lastName.touched && getControl.lastName.invalid">
+          <p *ngIf="getControl.lastName.errors?.required" class="text-danger">
+            this field is required
+          </p>
+        </div>
       </div>
 
       <div class="form-group">
@@ -31,6 +43,18 @@
           class="form-control"
           placeholder="Enter user id"
         />
+        <div
+          *ngIf="
+            getControl.dateOfBirth.touched && getControl.dateOfBirth.invalid
+          "
+        >
+          <p
+            *ngIf="getControl.dateOfBirth.errors?.required"
+            class="text-danger"
+          >
+            this field is required
+          </p>
+        </div>
       </div>
 
       <div class="form-group">
@@ -41,6 +65,11 @@
           placeholder="Enter user id"
           formControlName="userId"
         />
+        <div *ngIf="getControl.userId.touched && getControl.userId.invalid">
+          <p *ngIf="getControl.userId.errors?.required" class="text-danger">
+            this field is required
+          </p>
+        </div>
       </div>
 
       <div class="form-group">
@@ -51,6 +80,15 @@
           formControlName="password"
           placeholder="Password"
         />
+        <div *ngIf="getControl.password.touched && getControl.password.invalid">
+          <p *ngIf="getControl.password.errors?.required" class="text-danger">
+            this field is required
+          </p>
+          <p *ngIf="getControl.password.errors?.pattern" class="text-danger">
+            must contain 8 char atleast with combination of
+            small,capital,special char and numbers
+          </p>
+        </div>
       </div>
       <button
         type="submit"

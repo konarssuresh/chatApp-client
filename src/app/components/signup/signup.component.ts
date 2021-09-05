@@ -34,6 +34,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  get getControl() {
+    return this.signUpForm.controls;
+  }
+
   handleSignUp = () => {
     this.loginService
       .signUpUser(this.signUpForm.value)

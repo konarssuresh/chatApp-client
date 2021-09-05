@@ -44,6 +44,7 @@ export class ChatComponent implements OnInit {
       ) {
         console.log('message received by' + this.loggedInUser.userId);
         this.messages.push(message);
+        this.scroll();
       }
     });
   }
@@ -59,4 +60,9 @@ export class ChatComponent implements OnInit {
     this.messages.push(message);
     this.message = '';
   }
+
+  scroll = () => {
+    let el: any = document.getElementById('chat');
+    el.scrollIntoView();
+  };
 }
