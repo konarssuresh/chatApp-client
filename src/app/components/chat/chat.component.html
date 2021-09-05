@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>Chat Logs</h3>
+  <div *ngFor="let msg of messages">
+    <div *ngIf="msg.senderId === loggedInUser.userId" class="text-left">
+      {{ loggedInUser.firstName + " " + loggedInUser.lastName }}
+      {{ msg.messageText }}
+    </div>
+    <div *ngIf="msg.senderId === chatWith.userId" class="text-right">
+      {{ chatWith.name }}
+      {{ msg.messageText }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <textarea
+      class="form-control"
+      rows="3"
+      cols="24"
+      [(ngModel)]="message"
+    ></textarea
+    ><br />
+    <button
+      class="form-control"
+      (click)="handleSendMessage()"
+      [disabled]="message.length === 0"
+    >
+      Send message
+    </button>
+  </div>
+</div>

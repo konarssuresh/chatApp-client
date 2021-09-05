@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card formContainer">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+      <div class="form-group">
+        <label for="exampleInputEmail1">User Id</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter user id"
+          formControlName="userId"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Password"
+        />
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!loginForm.valid"
+        class="btn btn-primary form-control"
+      >
+        Submit
+      </button>
+
+      <button type="reset" class="btn btn-danger form-control">Reset</button>
+      <br />
+      <a routerLink="/signUp" class="signUpUrl"> Dont have an account.SignUp</a>
+    </form>
+    <p class="text text-danger">{{ errorMsg }}</p>
+  </div>
+</div>

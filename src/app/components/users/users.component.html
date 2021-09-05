@@ -1,0 +1,5 @@
+<div *ngFor="let user of usersList">
+  <div *ngIf="showUser(user.userId)" (click)="goToChatPage(user)">
+    {{ user.name }}
+  </div>
+</div>

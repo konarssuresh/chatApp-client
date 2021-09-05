@@ -1,0 +1,13 @@
+.loginUrl {
+  float: right;
+}
+
+.signUpForm {
+  width: 33rem;
+  margin-top: 2rem;
+  padding: 3rem;
+  position: absolute;
+
+  left: 50%;
+  margin-left: -16.5rem;
+}
